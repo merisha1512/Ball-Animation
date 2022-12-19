@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ball Animation</title>
+        <style>
+            .container{
+                height: 50px;
+                width: 50px;
+                background-color: red;
+                border-radius: 50%;
+                position: relative;
+                top: 0;
+                margin: auto;
+                animation: move 2s infinite;
+            }
+            .paused{
+                animation-play-state: paused;
+            }
+            @keyframes move{
+                0%{
+                    top: 0;;
+                }
+                25%{
+                    top: 50px;
+                    animation-timing-function: ease-in;
+                }
+                50%{
+                    top: 200px;
+                    animation-timing-function: ease-out;
+                }
+                75%{
+                    top: 75px;
+                    animation-timing-function: ease-in;
+                }
+                100%{
+                    top: 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container" id="box"></div>
+        <button onclick="ball()">Toggle Animation</button>
+        <script>
+            var element=document.getElementById('box');
+            console.log(element);
+            function ball(){
+                element.classList.toggle("paused");
+            }
+        </script>
+    </body>
+</html>
